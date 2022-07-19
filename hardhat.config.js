@@ -37,7 +37,13 @@ module.exports = {
       url: "https://bsc-dataseed1.defibit.io/",
       chainId: 56,
       gasPrice: 6000000000,
-      timeout: 1000000
+      timeout: 1000000,
+      // accounts: ["PRIVATE_KEY_GO_HERE"]
+      // OR
+      // accounts: {
+      //   mnemonic: "MNEMONIC_GO_HERE",
+      //   count: 50
+      // }
     },
     testnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
