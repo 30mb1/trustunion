@@ -24,12 +24,12 @@ contract TRUSTT is ITRUSTT, ERC20, Ownable {
     }
 
     modifier onlyMinter() {
-        require(msg.sender == minter, "Ownable: caller is not the minter");
+        require(msg.sender == minter, "TRUSTT::onlyMinter: caller is not the minter");
         _;
     }
 
     function setMinter(address newMinter) external onlyOwner {
-        require(newMinter != address(0), "Ownable: new owner is the zero address");
+        require(newMinter != address(0), "TRUSTT::setMinter: new owner is the zero address");
         minter = newMinter;
 
         emit SetNewMinter(msg.sender, newMinter);

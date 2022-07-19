@@ -32,8 +32,8 @@ describe("Trust ecosystem test", function () {
     it("Check admin functions protected", async () => {
         // try to change minter from non-owner address
         await expect(trust.connect(alice).setMinter(token_swap.address)).to.be.revertedWith("Ownable: caller is not the owner");
-        await expect(trust.connect(alice).burn(token_swap.address, 1000)).to.be.revertedWith("Ownable: caller is not the minter");
-        await expect(trust.connect(alice).mint(token_swap.address, 1000)).to.be.revertedWith("Ownable: caller is not the minter");
+        await expect(trust.connect(alice).burn(token_swap.address, 1000)).to.be.revertedWith("TRUSTT::onlyMinter: caller is not the minter");
+        await expect(trust.connect(alice).mint(token_swap.address, 1000)).to.be.revertedWith("TRUSTT::onlyMinter: caller is not the minter");
     })
 
     it("Mint TRUSTT base test", async () => {
